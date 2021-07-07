@@ -1,8 +1,10 @@
-export const capitalize = function() {
-
+export const capitalize = function(str) {
+  if(typeof str !== 'string') throw new Error('Not a string');
+  if(str.length === 0) return "";
+  return `${str[0].toUpperCase()}${str.slice(1)}`;
 };
 
-export const reverseString = function(string) {
+export const reverseString = function() {
 
 };
 
