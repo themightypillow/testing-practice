@@ -20,6 +20,6 @@ describe('capitalize', () => {
     expect(capitalize('pillow')).toBe('Pillow');
   });
   test('throw an error for non-strings', () => {
-    expect(capitalize(1234)).toThrow('Not a string');
+    expect(() => capitalize(1234).toThrow('Not a string'));
   });
 });
