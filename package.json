@@ -1,0 +1,23 @@
+{
+  "name": "testing-practice",
+  "version": "1.0.0",
+  "description": "The Odin Project: Testing Practice",
+  "main": "functions.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themightypillow/testing-practice.git"
+  },
+  "author": "Cheri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/themightypillow/testing-practice/issues"
+  },
+  "homepage": "https://github.com/themightypillow/testing-practice#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.7",
+    "jest": "^27.0.6"
+  }
+}
