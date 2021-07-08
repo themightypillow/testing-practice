@@ -141,7 +141,7 @@ describe('caesar', () => {
 });
 
 describe('analyze', () => {
-  xtest('analyze an empty array', () => {
+  test('analyze an empty array', () => {
     expect(analyze([])).toEqual({
       average: undefined,
       min: undefined,
@@ -149,7 +149,7 @@ describe('analyze', () => {
       length: 0
     });
   });
-  xtest('analyze an array of 1 number', () => {
+  test('analyze an array of 1 number', () => {
     expect(analyze([1])).toEqual({
       average: 1,
       min: 1,
@@ -157,7 +157,7 @@ describe('analyze', () => {
       length: 1
     });
   });
-  xtest('analyze an array of 6 numbers', () => {
+  test('analyze an array of 6 numbers', () => {
     expect(analyze([1, 8, 3, 4, 2, 6])).toEqual({
       average: 4,
       min: 1,
@@ -165,7 +165,7 @@ describe('analyze', () => {
       length: 6
     });
   });
-  xtest('analyze an array with non-numbers', () => {
+  test('analyze an array with non-numbers', () => {
     expect(() => analyze(['a', 'b', 'c', 1]).toThrow('One or more elements not a number'));
   });
 });

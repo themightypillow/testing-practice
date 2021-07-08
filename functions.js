@@ -50,6 +50,21 @@ export const caesar = function(str, n) {
   return lowerShift.replace(/[A-Z]/g, match => letterShift(match, n, 65, 90));
 };
 
-export const analyze = function() {
-
+export const analyze = function(arr) {
+  const data = arr.reduce((analysis, n) => {
+    if(typeof n !== 'number') throw new Error('One or more elements not a number');
+    analysis.average += n;
+    if(analysis.min > n) analysis.min = n;
+    if(analysis.max < n) analysis.max = n;
+    return analysis;
+  },
+  {
+    average: 0,
+    min: arr[0],
+    max: arr[0],
+    length: arr.length 
+  });
+  if(arr.length === 0) data.average = undefined;
+  else data.average = data.average / arr.length;
+  return data;
 };
