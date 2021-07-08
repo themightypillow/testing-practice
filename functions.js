@@ -4,8 +4,9 @@ export const capitalize = function(str) {
   return `${str[0].toUpperCase()}${str.slice(1)}`;
 };
 
-export const reverseString = function() {
-
+export const reverseString = function(str) {
+  if(typeof str !== 'string') throw new Error('Not a string');
+  return str.split('').reverse().join('');
 };
 
 export const calculator = {
