@@ -50,10 +50,10 @@ describe('reverseString', () => {
 
 describe('calculator', () => {
   describe('add', () => {
-    test('adds two numbers', () => {
+    test('add two numbers', () => {
       expect(calculator.add(1, 2)).toBe(3);
     });
-    test('adds three numbers', () => {
+    test('add three numbers', () => {
       expect(calculator.add(1, 2, 3)).toBe(6);
     });
     test('throw an error when first argument is not a number', () => {
@@ -64,10 +64,10 @@ describe('calculator', () => {
     });
   });
   describe('subtract', () => {
-    test('subtracts two numbers', () => {
+    test('subtract two numbers', () => {
       expect(calculator.subtract(2, 1)).toBe(1);
     });
-    test('subtracts three numbers', () => {
+    test('subtract three numbers', () => {
       expect(calculator.subtract(3, 2, 1)).toBe(0);
     });
     test('throw an error when first argument is not a number', () => {
@@ -78,10 +78,10 @@ describe('calculator', () => {
     });
   });
   describe('multiply', () => {
-    test('multiplies two numbers', () => {
+    test('multiply two numbers', () => {
       expect(calculator.multiply(1, 2)).toBe(2);
     });
-    test('multiplies three numbers', () => {
+    test('multiply three numbers', () => {
       expect(calculator.multiply(1, 2, 3)).toBe(6);
     });
     test('throw an error when first argument is not a number', () => {
@@ -92,10 +92,10 @@ describe('calculator', () => {
     });
   });
   describe('divide', () => {
-    test('divides two numbers', () => {
+    test('divide two numbers', () => {
       expect(calculator.divide(2, 1)).toBe(2);
     });
-    test('divides three numbers', () => {
+    test('divide three numbers', () => {
       expect(calculator.divide(3, 2, 1)).toBe(1.5);
     });
     test('divide by zero', () => {
