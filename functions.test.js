@@ -1,4 +1,4 @@
-import { capitalize } from './functions';
+import { capitalize, reverseString, calculator } from './functions';
 
 describe('capitalize', () => {
   test('leave an empty string the same', () => {
@@ -45,5 +45,67 @@ describe('reverseString', () => {
   });
   test('throw an error for non-strings', () => {
     expect(() => reverseString(1234).toThrow('Not a string'));
+  });
+});
+
+describe('calculator', () => {
+  describe('add', () => {
+    test('adds two numbers', () => {
+      expect(calculator.add(1, 2)).toBe(3);
+    });
+    test('adds three numbers', () => {
+      expect(calculator.add(1, 2, 3)).toBe(6);
+    });
+    test('throw an error when first argument is not a number', () => {
+      expect(() => calculator.add('a', 1).toThrow('One or more arguments not a number'));
+    });
+    test('throw an error when second argument is not a number', () => {
+      expect(() => calculator.add(1, 'b').toThrow('One or more arguments not a number'));
+    });
+  });
+  describe('subtract', () => {
+    test('subtracts two numbers', () => {
+      expect(calculator.subtract(2, 1)).toBe(1);
+    });
+    test('subtracts three numbers', () => {
+      expect(calculator.subtract(3, 2, 1)).toBe(0);
+    });
+    test('throw an error when first argument is not a number', () => {
+      expect(() => calculator.subtract('a', 1).toThrow('One or more arguments not a number'));
+    });
+    test('throw an error when second argument is not a number', () => {
+      expect(() => calculator.subtract(1, 'b').toThrow('One or more arguments not a number'));
+    });
+  });
+  describe('multiply', () => {
+    test('multiplies two numbers', () => {
+      expect(calculator.multiply(1, 2)).toBe(2);
+    });
+    test('multiplies three numbers', () => {
+      expect(calculator.multiply(1, 2, 3)).toBe(6);
+    });
+    test('throw an error when first argument is not a number', () => {
+      expect(() => calculator.multiply('a', 1).toThrow('One or more arguments not a number'));
+    });
+    test('throw an error when second argument is not a number', () => {
+      expect(() => calculator.multiply(1, 'b').toThrow('One or more arguments not a number'));
+    });
+  });
+  describe('divide', () => {
+    test('divides two numbers', () => {
+      expect(calculator.divide(2, 1)).toBe(2);
+    });
+    test('divides three numbers', () => {
+      expect(calculator.divide(3, 2, 1)).toBe(1.5);
+    });
+    test('divide by zero', () => {
+      expect(() => calculator.divide(1, 0).toThrow('Divide by zero'));
+    });
+    test('throw an error when first argument is not a number', () => {
+      expect(() => calculator.divide('a', 1).toThrow('One or more arguments not a number'));
+    });
+    test('throw an error when second argument is not a number', () => {
+      expect(() => calculator.divide(1, 'b').toThrow('One or more arguments not a number'));
+    });
   });
 });
