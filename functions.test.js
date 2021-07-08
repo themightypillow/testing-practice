@@ -23,3 +23,27 @@ describe('capitalize', () => {
     expect(() => capitalize(1234).toThrow('Not a string'));
   });
 });
+
+describe('reverseString', () => {
+  test('leave an empty string the same', () => {
+    expect(reverseString('')).toBe('');
+  });
+  test('leave one character string the same', () => {
+    expect(reverseString('a')).toBe('a');
+  });
+  test('leave short palindrome the same', () => {
+    expect(reverseString('aha')).toBe('aha');
+  });
+  test('leave long palindrome the same', () => {
+    expect(reverseString('rotavator')).toBe('rotavator');
+  });
+  test('reverse a short string', () => {
+    expect(reverseString('apple')).toBe('elppa');
+  });
+  test('reverse a long string with spaces', () => {
+    expect(reverseString('reverse a long string with spaces')).toBe('secaps htiw gnirts gnol a esrever');
+  });
+  test('throw an error for non-strings', () => {
+    expect(() => reverseString(1234).toThrow('Not a string'));
+  });
+});
