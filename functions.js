@@ -37,8 +37,17 @@ export const calculator = {
   }
 };
 
-export const caesar = function() {
+function letterShift(ch, n, lower, upper) {
+  let charCode = ch.charCodeAt() + (n % 26);
+  if(charCode < lower) charCode += 26;
+  if(charCode > upper) charCode -= 26;
+  return String.fromCharCode(charCode);
+};
 
+export const caesar = function(str, n) {
+  if(typeof str !== 'string') throw new Error('Not a string');
+  const lowerShift = str.replace(/[a-z]/g, match => letterShift(match, n, 97, 122));
+  return lowerShift.replace(/[A-Z]/g, match => letterShift(match, n, 65, 90));
 };
 
 export const analyze = function() {

@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesar } from './functions';
+import { capitalize, reverseString, calculator, caesar, analyze } from './functions';
 
 describe('capitalize', () => {
   test('leave an empty string the same', () => {
@@ -111,7 +111,10 @@ describe('calculator', () => {
 });
 
 describe('caesar', () => {
-  test('do not shift a character', () => {
+  test('shift an empty string', () => {
+    expect(caesar('', 1)).toBe('');
+  });
+  test('shift a character 0 times', () => {
     expect(caesar('a', 0)).toBe('a');
   });
   test('shift a character 3 times', () => {
@@ -121,15 +124,48 @@ describe('caesar', () => {
     expect(caesar('apple', 5)).toBe('fuuqj');
   });
   test('shift a long string with spaces', () => {
-    expect(caesar('shift this sentence ten times', 10)).toBe('srspd drsc coxdoxmo dox dswoc');
+    expect(caesar('shift this sentence ten times', 10)).toBe('crspd drsc coxdoxmo dox dswoc');
   });
   test('shift a string with case', () => {
     expect(caesar('The method is named after Julius Caesar', 8)).toBe('Bpm umbpwl qa viuml inbmz Rctqca Kimaiz');
   });
   test('shift a string with punctuation', () => {
-    expect(caesar("don't won't can't, I'll shouldn't: hadn't!", 5)).toBe("paz'f iaz'f omz'f, U'xx etagxpz'f: tmpz'f!");
+    expect(caesar("don't won't can't, I'll shouldn't: hadn't!", 12)).toBe("paz'f iaz'f omz'f, U'xx etagxpz'f: tmpz'f!");
   });
   test('shift wraps', () => {
     expect(caesar('banana', 49)).toBe('yxkxkx');
+  });
+  test('throw an error for non-strings', () => {
+    expect(() => caesar(1234, 2).toThrow('Not a string'));
+  });
+});
+
+describe('analyze', () => {
+  xtest('analyze an empty array', () => {
+    expect(analyze([])).toEqual({
+      average: undefined,
+      min: undefined,
+      max: undefined,
+      length: 0
+    });
+  });
+  xtest('analyze an array of 1 number', () => {
+    expect(analyze([1])).toEqual({
+      average: 1,
+      min: 1,
+      max: 1,
+      length: 1
+    });
+  });
+  xtest('analyze an array of 6 numbers', () => {
+    expect(analyze([1, 8, 3, 4, 2, 6])).toEqual({
+      average: 4,
+      min: 1,
+      max: 8,
+      length: 6
+    });
+  });
+  xtest('analyze an array with non-numbers', () => {
+    expect(() => analyze(['a', 'b', 'c', 1]).toThrow('One or more elements not a number'));
   });
 });
