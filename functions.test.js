@@ -20,7 +20,7 @@ describe('capitalize', () => {
     expect(capitalize('pillow')).toBe('Pillow');
   });
   test('throw an error for non-strings', () => {
-    expect(() => capitalize(1234).toThrow('Not a string'));
+    expect(() => capitalize(1234)).toThrow('Not a string');
   });
 });
 
@@ -44,7 +44,7 @@ describe('reverseString', () => {
     expect(reverseString('reverse a long string with spaces')).toBe('secaps htiw gnirts gnol a esrever');
   });
   test('throw an error for non-strings', () => {
-    expect(() => reverseString(1234).toThrow('Not a string'));
+    expect(() => reverseString(1234)).toThrow('Not a string');
   });
 });
 
@@ -57,10 +57,10 @@ describe('calculator', () => {
       expect(calculator.add(1, 2, 3)).toBe(6);
     });
     test('throw an error when first argument is not a number', () => {
-      expect(() => calculator.add('a', 1).toThrow('One or more arguments not a number'));
+      expect(() => calculator.add('a', 1)).toThrow('One or more arguments not a number');
     });
     test('throw an error when second argument is not a number', () => {
-      expect(() => calculator.add(1, 'b').toThrow('One or more arguments not a number'));
+      expect(() => calculator.add(1, 'b')).toThrow('One or more arguments not a number');
     });
   });
   describe('subtract', () => {
@@ -71,10 +71,10 @@ describe('calculator', () => {
       expect(calculator.subtract(3, 2, 1)).toBe(0);
     });
     test('throw an error when first argument is not a number', () => {
-      expect(() => calculator.subtract('a', 1).toThrow('One or more arguments not a number'));
+      expect(() => calculator.subtract('a', 1)).toThrow('One or more arguments not a number');
     });
     test('throw an error when second argument is not a number', () => {
-      expect(() => calculator.subtract(1, 'b').toThrow('One or more arguments not a number'));
+      expect(() => calculator.subtract(1, 'b')).toThrow('One or more arguments not a number');
     });
   });
   describe('multiply', () => {
@@ -85,10 +85,10 @@ describe('calculator', () => {
       expect(calculator.multiply(1, 2, 3)).toBe(6);
     });
     test('throw an error when first argument is not a number', () => {
-      expect(() => calculator.multiply('a', 1).toThrow('One or more arguments not a number'));
+      expect(() => calculator.multiply('a', 1)).toThrow('One or more arguments not a number');
     });
     test('throw an error when second argument is not a number', () => {
-      expect(() => calculator.multiply(1, 'b').toThrow('One or more arguments not a number'));
+      expect(() => calculator.multiply(1, 'b')).toThrow('One or more arguments not a number');
     });
   });
   describe('divide', () => {
@@ -99,13 +99,13 @@ describe('calculator', () => {
       expect(calculator.divide(3, 2, 1)).toBe(1.5);
     });
     test('divide by zero', () => {
-      expect(() => calculator.divide(1, 0).toThrow('Divide by zero'));
+      expect(() => calculator.divide(1, 0)).toThrow('Divide by zero');
     });
     test('throw an error when first argument is not a number', () => {
-      expect(() => calculator.divide('a', 1).toThrow('One or more arguments not a number'));
+      expect(() => calculator.divide('a', 1)).toThrow('One or more arguments not a number');
     });
     test('throw an error when second argument is not a number', () => {
-      expect(() => calculator.divide(1, 'b').toThrow('One or more arguments not a number'));
+      expect(() => calculator.divide(1, 'b')).toThrow('One or more arguments not a number');
     });
   });
 });
@@ -136,7 +136,7 @@ describe('caesar', () => {
     expect(caesar('banana', 49)).toBe('yxkxkx');
   });
   test('throw an error for non-strings', () => {
-    expect(() => caesar(1234, 2).toThrow('Not a string'));
+    expect(() => caesar(1234, 2)).toThrow('Not a string');
   });
 });
 
@@ -166,6 +166,6 @@ describe('analyze', () => {
     });
   });
   test('analyze an array with non-numbers', () => {
-    expect(() => analyze(['a', 'b', 'c', 1]).toThrow('One or more elements not a number'));
+    expect(() => analyze(['a', 'b', 'c', 1])).toThrow('One or more elements not a number');
   });
 });

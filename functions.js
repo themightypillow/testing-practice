@@ -14,9 +14,10 @@ export const calculator = {
     return nums.reduce((sum, n) => {
       if(typeof n !== 'number') throw new Error('One or more arguments not a number');
       return sum + n;
-    });
+    }, 0);
   },
   subtract: function(...nums) {
+    if(typeof nums[0] !== 'number') throw new Error('One or more arguments not a number');
     return nums.reduce((diff, n) => {
       if(typeof n !== 'number') throw new Error('One or more arguments not a number');
       return diff - n;
@@ -26,9 +27,10 @@ export const calculator = {
     return nums.reduce((prod, n) => {
       if(typeof n !== 'number') throw new Error('One or more arguments not a number');
       return prod * n;
-    });
+    }, 1);
   },
   divide: function(...nums) {
+    if(typeof nums[0] !== 'number') throw new Error('One or more arguments not a number');
     return nums.reduce((quot, n) => {
       if(typeof n !== 'number') throw new Error('One or more arguments not a number');
       if(n === 0) throw new Error('Divide by zero');
